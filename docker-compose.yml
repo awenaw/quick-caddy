@@ -11,5 +11,5 @@ services:
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
       - ./caddy/data:/data
       - ./caddy/config:/config
-      - ./site:/srv/site      
+      - ./caddy/site:/srv/site      
     restart: unless-stopped
