@@ -1,5 +1,144 @@
-<p>
-  haha<br>
-  haha<br>
-  222
-</p>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>未来科技酷酷页面</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #00ffe1;
+    font-family: 'Orbitron', monospace, monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  h1 {
+    font-size: 4rem;
+    margin: 0;
+    text-shadow:
+      0 0 5px #00ffe1,
+      0 0 10px #00ffe1,
+      0 0 20px #00ffe1,
+      0 0 40px #00ffe1;
+    animation: pulse 2s infinite alternate;
+  }
+
+  p {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    max-width: 600px;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .glitch {
+    position: relative;
+    color: #00ffe1;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-top: 40px;
+  }
+
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    right: 0;
+    opacity: 0.7;
+    clip: rect(0, 900px, 0, 0);
+  }
+
+  .glitch::before {
+    animation: glitchTop 2s infinite linear alternate-reverse;
+    color: #ff00c8;
+    z-index: -1;
+  }
+
+  .glitch::after {
+    animation: glitchBottom 2s infinite linear alternate-reverse;
+    color: #00ffea;
+    z-index: -2;
+  }
+
+  @keyframes pulse {
+    0% {
+      text-shadow:
+        0 0 5px #00ffe1,
+        0 0 10px #00ffe1,
+        0 0 20px #00ffe1,
+        0 0 40px #00ffe1;
+      transform: scale(1);
+    }
+    100% {
+      text-shadow:
+        0 0 10px #00ffe1,
+        0 0 20px #00ffe1,
+        0 0 30px #00ffe1,
+        0 0 60px #00ffe1;
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes glitchTop {
+    0% {
+      clip: rect(0, 9999px, 0, 0);
+      transform: translate(0);
+    }
+    10% {
+      clip: rect(2px, 9999px, 10px, 0);
+      transform: translate(-3px, -2px);
+    }
+    20% {
+      clip: rect(5px, 9999px, 15px, 0);
+      transform: translate(3px, 0);
+    }
+    30% {
+      clip: rect(0, 9999px, 5px, 0);
+      transform: translate(-1px, 2px);
+    }
+    40%, 100% {
+      clip: rect(0, 9999px, 0, 0);
+      transform: translate(0);
+    }
+  }
+
+  @keyframes glitchBottom {
+    0% {
+      clip: rect(0, 9999px, 0, 0);
+      transform: translate(0);
+    }
+    10% {
+      clip: rect(20px, 9999px, 30px, 0);
+      transform: translate(3px, 2px);
+    }
+    20% {
+      clip: rect(15px, 9999px, 25px, 0);
+      transform: translate(-3px, 0);
+    }
+    30% {
+      clip: rect(20px, 9999px, 30px, 0);
+      transform: translate(1px, -2px);
+    }
+    40%, 100% {
+      clip: rect(0, 9999px, 0, 0);
+      transform: translate(0);
+    }
+  }
+</style>
+</head>
+<body>
+  <h1>未来已来</h1>
+  <p>探索数字宇宙，解锁无限可能。<br />技术与艺术的完美交融，<br />让我们一起引领未来！</p>
+  <div class="glitch" data-text="WELCOME TO THE MATRIX">WELCOME TO THE MATRIX</div>
+</body>
+</html>
