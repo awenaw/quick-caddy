@@ -1,3 +1,12 @@
 xx.yy.com {
     reverse_proxy 172.17.0.1:8111
 }
+:8081 {
+    root * /srv/site/demo
+    file_server
+}
+
+:8082 {
+    root * /srv/site/site2
+    file_server
+}
